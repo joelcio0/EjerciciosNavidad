@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1" >Primer Parrafo</p>
+    <p id="p2" >Segundo Parrafo</p>
+    <p id="p3" >Tercer Parrafo</p>
+    <button id="judini" onclick="magia()">Reaparecer</button>
+    <script>
+        document.getElementById('p1').addEventListener('click',ocultar);
+        document.getElementById('p2').addEventListener('click',ocultar);
+        document.getElementById('p3').addEventListener('click',ocultar);
+
+        document.getElementById('judini').addEventListener('click',magia);
+
+        document.getElementById('p1').addEventListener('dblclick',borra);
+        document.getElementById('p2').addEventListener('dblclick',borra);
+        document.getElementById('p3').addEventListener('dblclick',borra);
+        function ocultar(c) {
+            let obj = c.target.id;
+            if (obj=="p1") {
+                document.getElementById('p1').setAttribute('hidden','true');
+            }
+            if (obj=="p2") {
+                document.getElementById('p2').setAttribute('hidden','true');
+            }
+            if (obj=="p3") {
+                document.getElementById('p3').setAttribute('hidden','true');
+            }
+        }
+
+        function borra(c) {
+            let obj = c.target.id;
+            if (obj=="p1") {
+                let adios=document.getElementById('p1');
+                document.body.removeChild(adios);
+            }
+            if (obj=="p2") {
+                let adios=document.getElementById('p2');
+                document.body.removeChild(adios);
+            }
+            if (obj=="p3") {
+                let adios=document.getElementById('p3');
+                document.body.removeChild(adios);
+            }
+        }
+
+        function magia() {
+            if(document.getElementById('p1')){
+                document.getElementById('p1').removeAttribute('hidden');
+            }
+            if(document.getElementById('p2')){
+                document.getElementById('p2').removeAttribute('hidden');
+            }
+            if(document.getElementById('p3')){
+                document.getElementById('p3').removeAttribute('hidden');
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="fomu">
+      Seleccionar a todos: <input type="checkbox" name="c" id="c1" onclick="toggle(this)" />
+      <br />
+    </form>
+
+    <script>
+      function toggle(source) {
+        checkboxes = document.getElementsByName("c");
+        for (var i = 0, n = checkboxes.length; i < n; i++) {
+          checkboxes[i].checked = source.checked;
+        }
+      }
+      for (let i = 1; i <= 100; i++) {
+        let che = document.createElement("input");
+        che.setAttribute("type", "checkbox");
+        che.setAttribute("name", "c");
+        che.setAttribute("id", "c" + i);
+        document.getElementById("fomu").innerHTML += i;
+        document.getElementById("fomu").appendChild(che);
+        let b = document.createElement("br");
+        document.getElementById("fomu").appendChild(b);
+      }
+    </script>
+  </body>
+</html>

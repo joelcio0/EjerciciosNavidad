@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tb=document.createElement('table');
+        let vari=1;
+        tb.setAttribute('border','1px solid black')
+        for (let i = 0; i < 100; i++) {
+            let t=document.createElement('tr');
+            for (let j = 0; j < 100; j++) {
+                let tt=document.createElement('td');
+                tt.textContent=vari;
+                if(primacho(vari)){
+                    tt.style.backgroundColor="rgb(255,255,0)";
+                }
+                vari++;
+                t.appendChild(tt);
+            }
+            tb.appendChild(t);
+        }
+        document.body.appendChild(tb);
+        function primacho(num) {
+            var ls=0;
+            for (let z = 0; z <= num; z++) {
+                if(num%z==0){
+                    ls++;
+                }
+            }
+            if(ls==3){
+                return true;
+            }else{
+                return  false;
+            }
+        }
+    </script>
+</body>
+</html>
